@@ -1,29 +1,71 @@
 ---
 import { SITE } from "../config/site.js";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = SITE.name;
 const description = SITE.description;
 const TELEGRAM_URL = SITE.telegram;
 ---
 
-<html lang="pt-PT">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<BaseLayout title={title} description={description}>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="brand-badge"></span>
+        <span>{title}</span>
+      </div>
 
-    <title>{title}</title>
-    <meta name="description" content={description} />
-  </head>
+      <nav class="nav-links">
+        <a href="#guias">Guias</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-small" href={TELEGRAM_URL} target="_blank">Telegram</a>
+      </nav>
+    </div>
+  </header>
 
-  <body>
-    <main>
-      <h1>{title}</h1>
-      <p>{description}</p>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="kicker">
+            <span class="dot"></span> Guias claros e diretos
+          </div>
 
-      <a href={TELEGRAM_URL} target="_blank" rel="noopener">
-        Entrar no Telegram
-      </a>
-    </main>
-  </body>
-</html>
+          <h1 class="h1">Conteúdo educativo sobre jogos online</h1>
+          <p class="lead">{description}</p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href={TELEGRAM_URL} target="_blank">
+              Entrar no Telegram
+            </a>
+            <a class="btn" href="#guias">Ver guias</a>
+          </div>
+
+          <div class="trust">
+            <span>Sem promessas</span>
+            <span>Informação clara</span>
+            <span>Leitura rápida</span>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <div class="media">
+            <div class="media-overlay">
+              <span class="pill">Atualizações</span>
+              <span class="pill">PT-PT</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>O que é este site?</h3>
+            <p>Um hub de guias, explicações e boas práticas.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="container" style="padding: 24px 0; opacity: .85;">
+  <a href="/disclaimer">Aviso Legal</a> · <a href="/privacidade">Privacidade</a>
+</footer>
+
+</BaseLayout>

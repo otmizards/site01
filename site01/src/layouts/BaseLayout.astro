@@ -1,16 +1,58 @@
 ---
-const { title, description } = Astro.props;
+import { SITE } from "../config/site.js";
+
+const {
+  title = SITE.name ?? SITE.siteName,
+  description = SITE.description ?? SITE.siteDescription,
+  canonicalPath = "/",
+  image = "/og.jpg",
+  noindex = false,
+} = Astro.props;
+
+const baseUrl = (SITE.url ?? SITE.siteUrl)?.replace(/\/$/, "") || "";
+const canonicalUrl = `${baseUrl}${canonicalPath}`.replace(/\/+$/, "/").replace(/\/$/, canonicalPath === "/" ? "/" : "");
+
+const ogImage = `${baseUrl}${image.startsWith("/") ? image : `/${image}`}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: title,
+  url: baseUrl || canonicalUrl,
+  description,
+  inLanguage: "pt-PT",
+};
 ---
+
 <!doctype html>
 <html lang="pt-PT">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+
     <link rel="stylesheet" href="/styles/global.css" />
+
+    <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
   </head>
+
   <body>
     <slot />
   </body>

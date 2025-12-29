@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../config/site.js";
+
+const title = `Aviso Legal — ${SITE.name ?? SITE.siteName}`;
+const description = "Informação educativa. Sem garantias de resultados. Joga com responsabilidade.";
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/disclaimer">
+  <main class="container" style="padding: 32px 0;">
+    <h1>Aviso Legal</h1>
+    <p>
+      Este site é informativo e educativo. Não garantimos resultados nem ganhos.
+      Se optares por jogar, fá-lo de forma responsável e dentro das tuas possibilidades.
+    </p>
+    <p>
+      O acesso via Telegram é apenas para receber atualizações e links. Não existe aconselhamento financeiro.
+    </p>
+  </main>
+</BaseLayout>
