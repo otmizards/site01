@@ -3,34 +3,50 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE } from "../config/site.js";
 
 const title = `Como ler condições (sem complicações) — ${SITE.name ?? SITE.siteName}`;
-const description = "Um método simples para ler condições: o que é exigido, prazos, limites e jogos elegíveis.";
+const description = "Método simples: 4 pontos essenciais + checklist para evitar surpresas em ofertas e promoções.";
 const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
 ---
 
 <BaseLayout title={title} description={description} canonicalPath="/como-ler-condicoes">
   <main class="container" style="padding: 32px 0;">
     <h1>Como ler condições (sem complicações)</h1>
-    <p>
-      A maioria das dúvidas vem de 4 pontos. Se verificares isto, já ficas à frente da maioria.
+    <p class="lead">
+      A maioria das pessoas perde tempo porque lê condições “ao acaso”.
+      Aqui vai um método simples: <strong>4 pontos</strong>. Se verificares isto, já ficas protegido.
     </p>
 
-    <h2>Checklist (4 pontos)</h2>
+    <h2>Os 4 pontos essenciais</h2>
     <ul>
       <li><strong>O que recebes</strong>: bónus, rodadas, cashback, etc.</li>
-      <li><strong>O que é exigido</strong>: requisitos de apostas (wagering), se existir.</li>
-      <li><strong>Prazos</strong>: validade da oferta e prazo para cumprir regras.</li>
+      <li><strong>O que é exigido</strong>: requisitos de apostas (se existirem).</li>
+      <li><strong>Prazos</strong>: validade e datas limite.</li>
       <li><strong>Limites</strong>: cap de levantamento e restrições adicionais.</li>
     </ul>
 
-    <p style="margin-top:24px;">
+    <h2>Checklist rápido (1 minuto)</h2>
+    <ul>
+      <li>Está claro se o requisito aplica ao depósito, ao bónus ou aos dois?</li>
+      <li>Quais jogos contam (e quanto contam)?</li>
+      <li>Há prazos diferentes para usar e para levantar?</li>
+      <li>Existe algum limite máximo de levantamento?</li>
+    </ul>
+
+    <h2>Se tiveres dúvida</h2>
+    <p>
+      Regra prática: se uma condição está confusa, trata como risco.
+      Podes acompanhar atualizações pelo Telegram para teres contexto quando algo mudar.
+    </p>
+
+    <div style="margin-top:18px;">
       <a class="btn btn-primary" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
         Receber atualizações no Telegram
       </a>
-    </p>
+    </div>
 
-    <p style="margin-top:20px;">
-      Próximo guia: <a href="/gestao-de-limites">Gestão de limites</a> ·
-      <a href="/guia-iniciante">Guia do iniciante</a> · <a href="/">Homepage</a>
+    <p style="margin-top:18px;">
+      Voltar: <a href="/guia-iniciante">Guia do Iniciante</a> ·
+      Próximo: <a href="/gestao-de-limites">Gestão de limites</a> ·
+      <a href="/">Homepage</a>
     </p>
   </main>
 </BaseLayout>

@@ -10,104 +10,261 @@ const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
 <BaseLayout title={title} description={description} canonicalPath="/">
   <header class="nav">
     <div class="container nav-inner">
-      <div class="brand">
-        <span class="brand-badge"></span>
-        <span>{title}</span>
-      </div>
+      <a class="brand" href="/" aria-label="Homepage">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span class="brand-name">{title}</span>
+      </a>
 
       <nav class="nav-links">
         <a href="#guias">Guias</a>
+        <a href="#como-funciona">Como funciona</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn-small" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a class="btn btn-small" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+          Telegram
+        </a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-left">
           <div class="kicker">
-            <span class="dot"></span> Guias claros e diretos
+            <span class="dot" aria-hidden="true"></span>
+            Guias claros, sem ruído
           </div>
 
-          <h1 class="h1">Guias e explicações claras (Portugal)</h1>
+          <h1 class="h1">Hub PT-PT sobre ofertas, regras e boas práticas</h1>
           <p class="lead">{description}</p>
 
           <div class="hero-ctas">
             <a class="btn btn-primary" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
               Entrar no Telegram
             </a>
-            <a class="btn" href="#guias">Ver guias</a>
+            <a class="btn" href="#guias">Explorar guias</a>
           </div>
 
           <div class="trust">
-            <span>Sem promessas</span>
-            <span>Informação clara</span>
+            <span>Conteúdo educativo</span>
             <span>Leitura rápida</span>
+            <span>Atualizações frequentes</span>
           </div>
         </div>
 
         <aside class="hero-right">
-          <div class="media">
-            <div class="media-overlay">
-              <span class="pill">Atualizações</span>
-              <span class="pill">PT-PT</span>
+          <div class="casino-card">
+            <div class="casino-top">
+              <div class="casino-chip" aria-hidden="true"></div>
+              <div class="casino-title">
+                <strong>Atualizações</strong>
+                <span>via Telegram</span>
+              </div>
             </div>
+
+            <div class="casino-metrics" role="list">
+              <div class="metric" role="listitem">
+                <span class="metric-k">Foco</span>
+                <span class="metric-v">clareza</span>
+              </div>
+              <div class="metric" role="listitem">
+                <span class="metric-k">Conteúdo</span>
+                <span class="metric-v">PT-PT</span>
+              </div>
+              <div class="metric" role="listitem">
+                <span class="metric-k">Objetivo</span>
+                <span class="metric-v">organizar o essencial</span>
+              </div>
+            </div>
+
+            <a class="btn btn-primary btn-full" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+              Receber novidades
+            </a>
+
+            <p class="micro-note">
+              Sem promessas. Sem garantias. Só informação e boas práticas.
+            </p>
           </div>
 
-          <div class="card">
-            <h3>O que é este site?</h3>
-            <p>Um hub de guias, explicações e boas práticas.</p>
+          <div class="glass-note">
+            <h3>O que encontras aqui</h3>
+            <p>Guias simples para entender regras, condições e decisões mais conscientes.</p>
           </div>
         </aside>
+      </div>
+
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <!-- VALUE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Uma “vibe casino” leve, mas com conteúdo sério</h2>
+          <p class="lead">
+            O objetivo é reduzir confusão: ler condições, evitar erros e acompanhar atualizações sem perder tempo.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"></div>
+            <h3>Explicações diretas</h3>
+            <p>Sem termos complicados. Se aparecerem, estão no guia e explicados por passos.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"></div>
+            <h3>Checklists práticos</h3>
+            <p>O que verificar em ofertas: prazos, limites, requisitos e jogos elegíveis.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"></div>
+            <h3>Atualizações via Telegram</h3>
+            <p>Quando houver novidade útil, partilhamos por lá para não dependeres de procurar tudo.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- GUIAS -->
     <section id="guias" class="section">
       <div class="container">
-        <h2>Guias</h2>
-        <p class="lead">Começa pelo essencial e avança para os detalhes.</p>
+        <div class="section-head">
+          <h2>Guias</h2>
+          <p class="lead">Começa pelo básico e avança para detalhes só quando fizer sentido.</p>
+        </div>
 
-        <ul>
-          <li><a href="/guia-iniciante">Guia do Iniciante</a></li>
-          <li><a href="/como-ler-condicoes">Como ler condições (sem complicações)</a></li>
-          <li><a href="/gestao-de-limites">Gestão de limites: boas práticas</a></li>
-        </ul>
-
-        <p style="margin-top:16px;">
-          <a class="btn btn-small" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-            Receber atualizações no Telegram
+        <div class="grid-3">
+          <a class="card card-link" href="/guia-iniciante">
+            <div class="tag">Essencial</div>
+            <h3>Guia do Iniciante</h3>
+            <p>Primeiros passos: como orientar-te e evitar erros logo no início.</p>
+            <span class="arrow" aria-hidden="true">→</span>
           </a>
-        </p>
+
+          <a class="card card-link" href="/como-ler-condicoes">
+            <div class="tag">Checklist</div>
+            <h3>Como ler condições</h3>
+            <p>4 pontos que resolvem 90% das dúvidas: exigido, prazo, limites e elegibilidade.</p>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="card card-link" href="/gestao-de-limites">
+            <div class="tag">Boas práticas</div>
+            <h3>Gestão de limites</h3>
+            <p>Regras simples para manter decisões controladas e consistentes.</p>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="cta-strip">
+          <div class="cta-strip-text">
+            <strong>Queres receber atualizações sem procurar?</strong>
+            <span>Entra no Telegram e acompanha as novidades por lá.</span>
+          </div>
+
+          <a class="btn btn-primary" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+            Entrar no Telegram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Como funciona</h2>
+          <p class="lead">Um processo simples para te manteres orientado.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-c">
+              <h3>Lê o guia certo</h3>
+              <p>Começa pelo “Guia do Iniciante” e segue a ordem recomendada.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-c">
+              <h3>Aplica o checklist</h3>
+              <p>Verifica exigido, prazos, limites e jogos elegíveis antes de decidir.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-c">
+              <h3>Acompanha atualizações</h3>
+              <p>Se quiseres, segue via Telegram para receber novidades com menos esforço.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- FAQ -->
     <section id="faq" class="section">
       <div class="container">
-        <h2>FAQ</h2>
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p class="lead">Respostas curtas para as dúvidas mais comuns.</p>
+        </div>
 
-        <details>
-          <summary>Este site promete ganhos?</summary>
-          <p>Não. É um site informativo e educativo. Não existem garantias de resultados.</p>
-        </details>
+        <div class="faq">
+          <details>
+            <summary>Este site promete ganhos?</summary>
+            <p>Não. É conteúdo informativo e educativo. Não existem garantias de resultados.</p>
+          </details>
 
-        <details>
-          <summary>Como acompanho atualizações?</summary>
-          <p>A forma mais simples é pelo Telegram, onde partilhamos novidades e links.</p>
-        </details>
+          <details>
+            <summary>O que devo verificar numa oferta?</summary>
+            <p>Quatro pontos: o que recebes, o que é exigido, prazos e limites. Depois, jogos elegíveis.</p>
+          </details>
 
-        <details>
-          <summary>Onde vejo avisos legais e privacidade?</summary>
-          <p>Estão disponíveis no rodapé em “Aviso Legal” e “Privacidade”.</p>
-        </details>
+          <details>
+            <summary>As condições são sempre iguais?</summary>
+            <p>Não. Podem mudar. Por isso é importante confirmar prazos e regras antes de aceitar.</p>
+          </details>
+
+          <details>
+            <summary>Porque existe Telegram?</summary>
+            <p>Para centralizar atualizações e links, evitando que tenhas de procurar tudo manualmente.</p>
+          </details>
+
+          <details>
+            <summary>Onde estão as páginas legais?</summary>
+            <p>No rodapé: “Aviso Legal” e “Privacidade”.</p>
+          </details>
+        </div>
       </div>
     </section>
 
-    <footer class="container" style="padding: 24px 0; opacity: .85;">
-      <a href="/disclaimer">Aviso Legal</a> · <a href="/privacidade">Privacidade</a>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-brand">
+            <span class="brand-badge" aria-hidden="true"></span>
+            <strong>{title}</strong>
+          </div>
+          <p class="footer-note">
+            Conteúdo educativo, sem garantias. Se optares por jogar, fá-lo de forma responsável.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="/disclaimer">Aviso Legal</a>
+          <a href="/privacidade">Privacidade</a>
+        </div>
+      </div>
     </footer>
   </main>
 </BaseLayout>
