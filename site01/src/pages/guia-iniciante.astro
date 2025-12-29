@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../config/site.js";
+
+const title = `Guia do Iniciante — ${SITE.name ?? SITE.siteName}`;
+const description = "Primeiros passos: como navegar ofertas, entender regras básicas e evitar confusão no início.";
+const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/guia-iniciante">
+  <main class="container" style="padding: 32px 0;">
+    <h1>Guia do iniciante</h1>
+    <p>
+      Este guia serve para organizar o básico: o que olhar primeiro, como interpretar informações e como evitar erros
+      típicos quando estás a começar.
+    </p>
+
+    <h2>3 passos simples</h2>
+    <ol>
+      <li><strong>Começa pela clareza</strong>: lê as regras e confirma o que é exigido.</li>
+      <li><strong>Evita pressa</strong>: prazos existem, mas decisões impulsivas geram erros.</li>
+      <li><strong>Segue fontes atualizadas</strong>: ofertas mudam frequentemente.</li>
+    </ol>
+
+    <p style="margin-top:24px;">
+      <a class="btn btn-primary" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+        Entrar no Telegram para atualizações
+      </a>
+    </p>
+
+    <p style="margin-top:20px;">
+      Próximo guia: <a href="/como-ler-condicoes">Como ler condições</a> · <a href="/">Homepage</a>
+    </p>
+  </main>
+</BaseLayout>
