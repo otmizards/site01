@@ -2,26 +2,13 @@
 import { SITE } from "../config/site.js";
 
 const {
-  title = SITE.name ?? SITE.siteName,
-  description = SITE.description ?? SITE.siteDescription,
+  title = SITE?.name ?? "360Wins Portugal",
+  description = SITE?.description ?? "Guias claros e diretos.",
   canonicalPath = "/",
-  image = "/og.jpg",
-  noindex = false,
 } = Astro.props;
 
-const baseUrl = (SITE.url ?? SITE.siteUrl)?.replace(/\/$/, "") || "";
-const canonicalUrl = `${baseUrl}${canonicalPath}`.replace(/\/+$/, "/").replace(/\/$/, canonicalPath === "/" ? "/" : "");
-
-const ogImage = `${baseUrl}${image.startsWith("/") ? image : `/${image}`}`;
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: title,
-  url: baseUrl || canonicalUrl,
-  description,
-  inLanguage: "pt-PT",
-};
+const baseUrl = SITE?.url ?? "https://360winspt.com";
+const canonical = new URL(canonicalPath, baseUrl).toString();
 ---
 
 <!doctype html>
@@ -32,28 +19,35 @@ const jsonLd = {
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
 
-    <link rel="canonical" href={canonicalUrl} />
-
+    <!-- Open Graph -->
+    <meta property="og:locale" content="pt_PT" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" />
 
-    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="/styles/global.css" />
-
-    <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
   </head>
 
   <body>
-    <slot />
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+
+    <div class="app">
+      <slot />
+    </div>
   </body>
 </html>

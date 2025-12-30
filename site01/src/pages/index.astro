@@ -2,24 +2,38 @@
 import { SITE } from "../config/site.js";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = SITE.name ?? SITE.siteName;
-const description = SITE.description ?? SITE.siteDescription;
+const title = SITE.name ?? SITE.siteName ?? "360Wins Portugal";
+const description =
+  SITE.description ??
+  SITE.siteDescription ??
+  "Guias completos e explicações claras sobre casino online em Portugal.";
 const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
 ---
 
 <BaseLayout title={title} description={description} canonicalPath="/">
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="/" aria-label="Homepage">
-        <span class="brand-badge" aria-hidden="true"></span>
-        <span class="brand-name">{title}</span>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="topbar-brand" href="/" aria-label="Homepage">
+        <img class="topbar-logo" src="/logo.png" alt={title} />
       </a>
 
-      <nav class="nav-links">
+      <nav class="topbar-nav">
         <a href="#guias">Guias</a>
-        <a href="#como-funciona">Como funciona</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn-small" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+        <a
+          class="btn btn-telegram btn-small"
+          href={TELEGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21.6 4.6 2.9 11.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.6 0 1-.3 1.3-.6l2.3-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4Z"
+                fill="white"
+              />
+            </svg>
+          </span>
           Telegram
         </a>
       </nav>
@@ -28,243 +42,145 @@ const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
 
   <main>
     <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <div class="kicker">
-            <span class="dot" aria-hidden="true"></span>
-            Guias claros, sem ruído
-          </div>
+    <section class="hero-mock">
+      <div class="container hero-mock-inner">
+        <img class="hero-logo" src="/logo.png" alt="360Wins Portugal" />
 
-          <h1 class="h1">Hub PT-PT sobre ofertas, regras e boas práticas</h1>
-          <p class="lead">{description}</p>
+        <h1 class="hero-title">
+          Guias de Casino Online em Portugal
+        </h1>
 
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-              Entrar no Telegram
-            </a>
-            <a class="btn" href="#guias">Explorar guias</a>
-          </div>
+        <p class="hero-sub">
+          Informação clara, detalhada e em português de Portugal sobre como funcionam
+          os casinos online. Explicamos regras, condições, bónus, rodadas grátis,
+          gestão de banca e princípios de jogo responsável — sem promessas e sem exageros.
+        </p>
 
-          <div class="trust">
-            <span>Conteúdo educativo</span>
-            <span>Leitura rápida</span>
-            <span>Atualizações frequentes</span>
-          </div>
-        </div>
-
-        <aside class="hero-right">
-          <div class="casino-card">
-            <div class="casino-top">
-              <div class="casino-chip" aria-hidden="true"></div>
-              <div class="casino-title">
-                <strong>Atualizações</strong>
-                <span>via Telegram</span>
-              </div>
+        <div class="hero-cards" id="guias">
+          <a class="mock-card" href="/casino-iniciantes">
+            <span class="mock-ic">★</span>
+            <div>
+              <strong>Casino Online para Iniciantes</strong>
+              <small>Primeiros passos, conceitos básicos e erros comuns</small>
             </div>
-
-            <div class="casino-metrics" role="list">
-              <div class="metric" role="listitem">
-                <span class="metric-k">Foco</span>
-                <span class="metric-v">clareza</span>
-              </div>
-              <div class="metric" role="listitem">
-                <span class="metric-k">Conteúdo</span>
-                <span class="metric-v">PT-PT</span>
-              </div>
-              <div class="metric" role="listitem">
-                <span class="metric-k">Objetivo</span>
-                <span class="metric-v">organizar o essencial</span>
-              </div>
-            </div>
-
-            <a class="btn btn-primary btn-full" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-              Receber novidades
-            </a>
-
-            <p class="micro-note">
-              Sem promessas. Sem garantias. Só informação e boas práticas.
-            </p>
-          </div>
-
-          <div class="glass-note">
-            <h3>O que encontras aqui</h3>
-            <p>Guias simples para entender regras, condições e decisões mais conscientes.</p>
-          </div>
-        </aside>
-      </div>
-
-      <div class="hero-glow" aria-hidden="true"></div>
-    </section>
-
-    <!-- VALUE -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Uma “vibe casino” leve, mas com conteúdo sério</h2>
-          <p class="lead">
-            O objetivo é reduzir confusão: ler condições, evitar erros e acompanhar atualizações sem perder tempo.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true"></div>
-            <h3>Explicações diretas</h3>
-            <p>Sem termos complicados. Se aparecerem, estão no guia e explicados por passos.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon" aria-hidden="true"></div>
-            <h3>Checklists práticos</h3>
-            <p>O que verificar em ofertas: prazos, limites, requisitos e jogos elegíveis.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon" aria-hidden="true"></div>
-            <h3>Atualizações via Telegram</h3>
-            <p>Quando houver novidade útil, partilhamos por lá para não dependeres de procurar tudo.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- GUIAS -->
-    <section id="guias" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Guias</h2>
-          <p class="lead">Começa pelo básico e avança para detalhes só quando fizer sentido.</p>
-        </div>
-
-        <div class="grid-3">
-          <a class="card card-link" href="/guia-iniciante">
-            <div class="tag">Essencial</div>
-            <h3>Guia do Iniciante</h3>
-            <p>Primeiros passos: como orientar-te e evitar erros logo no início.</p>
-            <span class="arrow" aria-hidden="true">→</span>
           </a>
 
-          <a class="card card-link" href="/como-ler-condicoes">
-            <div class="tag">Checklist</div>
-            <h3>Como ler condições</h3>
-            <p>4 pontos que resolvem 90% das dúvidas: exigido, prazo, limites e elegibilidade.</p>
-            <span class="arrow" aria-hidden="true">→</span>
+          <a class="mock-card" href="/condicoes-bonus">
+            <span class="mock-ic">✓</span>
+            <div>
+              <strong>Condições de Bónus</strong>
+              <small>Exigido, prazos, limites e regras explicadas</small>
+            </div>
           </a>
 
-          <a class="card card-link" href="/gestao-de-limites">
-            <div class="tag">Boas práticas</div>
-            <h3>Gestão de limites</h3>
-            <p>Regras simples para manter decisões controladas e consistentes.</p>
-            <span class="arrow" aria-hidden="true">→</span>
+          <a class="mock-card" href="/free-spins">
+            <span class="mock-ic">♢</span>
+            <div>
+              <strong>Free Spins e Rodadas Grátis</strong>
+              <small>Como funcionam e quais as suas limitações</small>
+            </div>
+          </a>
+
+          <!-- 6ª PÁGINA -->
+          <a class="mock-card" href="/rtp-volatilidade">
+            <span class="mock-ic">◆</span>
+            <div>
+              <strong>RTP e Volatilidade</strong>
+              <small>O que significam e como afetam risco e decisões</small>
+            </div>
+          </a>
+
+          <a class="mock-card" href="/gestao-banca">
+            <span class="mock-ic">⚑</span>
+            <div>
+              <strong>Gestão de Banca</strong>
+              <small>Definir limites e manter decisões controladas</small>
+            </div>
+          </a>
+
+          <a class="mock-card" href="/jogo-responsavel">
+            <span class="mock-ic">☑</span>
+            <div>
+              <strong>Jogo Responsável</strong>
+              <small>Controlo, sinais de alerta e boas práticas</small>
+            </div>
           </a>
         </div>
 
-        <div class="cta-strip">
-          <div class="cta-strip-text">
-            <strong>Queres receber atualizações sem procurar?</strong>
-            <span>Entra no Telegram e acompanha as novidades por lá.</span>
-          </div>
-
-          <a class="btn btn-primary" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-            Entrar no Telegram
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section id="como-funciona" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Como funciona</h2>
-          <p class="lead">Um processo simples para te manteres orientado.</p>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-n">1</div>
-            <div class="step-c">
-              <h3>Lê o guia certo</h3>
-              <p>Começa pelo “Guia do Iniciante” e segue a ordem recomendada.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-n">2</div>
-            <div class="step-c">
-              <h3>Aplica o checklist</h3>
-              <p>Verifica exigido, prazos, limites e jogos elegíveis antes de decidir.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-n">3</div>
-            <div class="step-c">
-              <h3>Acompanha atualizações</h3>
-              <p>Se quiseres, segue via Telegram para receber novidades com menos esforço.</p>
-            </div>
-          </div>
-        </div>
+        <a
+          class="btn btn-telegram btn-cta"
+          href={TELEGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21.6 4.6 2.9 11.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.6 0 1-.3 1.3-.6l2.3-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+          Entrar no Telegram
+        </a>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section">
+    <section id="faq" class="faq-mock">
       <div class="container">
-        <div class="section-head">
-          <h2>FAQ</h2>
-          <p class="lead">Respostas curtas para as dúvidas mais comuns.</p>
-        </div>
+        <h2 class="faq-title">Perguntas Frequentes</h2>
 
-        <div class="faq">
-          <details>
-            <summary>Este site promete ganhos?</summary>
-            <p>Não. É conteúdo informativo e educativo. Não existem garantias de resultados.</p>
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>O que é o 360Wins Portugal?</summary>
+            <p>
+              O 360Wins Portugal é um site informativo dedicado a explicar, de forma clara,
+              como funcionam os casinos online em Portugal, incluindo regras, bónus e boas práticas.
+            </p>
           </details>
 
-          <details>
-            <summary>O que devo verificar numa oferta?</summary>
-            <p>Quatro pontos: o que recebes, o que é exigido, prazos e limites. Depois, jogos elegíveis.</p>
+          <details class="faq-item">
+            <summary>Este site recomenda casinos ou garante resultados?</summary>
+            <p>
+              Não. O conteúdo é exclusivamente educativo e informativo.
+              Não operamos jogos, não processamos pagamentos e não garantimos resultados.
+            </p>
           </details>
 
-          <details>
-            <summary>As condições são sempre iguais?</summary>
-            <p>Não. Podem mudar. Por isso é importante confirmar prazos e regras antes de aceitar.</p>
+          <details class="faq-item">
+            <summary>Este conteúdo é adequado para iniciantes?</summary>
+            <p>
+              Sim. Os guias foram criados para serem acessíveis a quem está a começar,
+              sem deixar de ser úteis para utilizadores mais experientes.
+            </p>
           </details>
 
-          <details>
-            <summary>Porque existe Telegram?</summary>
-            <p>Para centralizar atualizações e links, evitando que tenhas de procurar tudo manualmente.</p>
+          <details class="faq-item">
+            <summary>O que devo verificar antes de aceitar um bónus?</summary>
+            <p>
+              É importante verificar o exigido (wager), prazos, limites de aposta
+              e jogos elegíveis antes de ativar qualquer oferta.
+            </p>
           </details>
 
-          <details>
-            <summary>Onde estão as páginas legais?</summary>
-            <p>No rodapé: “Aviso Legal” e “Privacidade”.</p>
+          <details class="faq-item">
+            <summary>Porque existe um canal no Telegram?</summary>
+            <p>
+              Para centralizar atualizações, novos guias e conteúdos adicionais
+              num único local, de forma opcional.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Este conteúdo é focado em Portugal?</summary>
+            <p>
+              Sim. O conteúdo é escrito em português de Portugal e focado
+              no contexto dos utilizadores em Portugal.
+            </p>
           </details>
         </div>
       </div>
     </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container footer-inner">
-        <div class="footer-left">
-          <div class="footer-brand">
-            <span class="brand-badge" aria-hidden="true"></span>
-            <strong>{title}</strong>
-          </div>
-          <p class="footer-note">
-            Conteúdo educativo, sem garantias. Se optares por jogar, fá-lo de forma responsável.
-          </p>
-        </div>
-
-        <div class="footer-links">
-          <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">Telegram</a>
-          <a href="/disclaimer">Aviso Legal</a>
-          <a href="/privacidade">Privacidade</a>
-        </div>
-      </div>
-    </footer>
   </main>
 </BaseLayout>
