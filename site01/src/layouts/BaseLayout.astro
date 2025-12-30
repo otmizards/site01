@@ -2,12 +2,13 @@
 import { SITE } from "../config/site.js";
 
 const {
-  title = SITE.name ?? SITE.siteName ?? "360Wins Portugal",
-  description = SITE.description ?? SITE.siteDescription ?? "Informação clara sobre casino online em Portugal.",
+  title = SITE?.name ?? "360Wins Portugal",
+  description = SITE?.description ?? "Guias claros e diretos.",
   canonicalPath = "/",
 } = Astro.props;
 
-const canonicalUrl = new URL(canonicalPath, SITE.site ?? SITE.url ?? "https://360winspt.com").toString();
+const baseUrl = SITE?.url ?? "https://360winspt.com";
+const canonical = new URL(canonicalPath, baseUrl).toString();
 ---
 
 <!doctype html>
@@ -15,15 +16,38 @@ const canonicalUrl = new URL(canonicalPath, SITE.site ?? SITE.url ?? "https://36
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalUrl} />
+    <link rel="canonical" href={canonical} />
 
-    <!-- CSS global único (obrigatório) -->
+    <!-- Open Graph -->
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
 
   <body>
-    <slot />
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+
+    <div class="app">
+      <slot />
+    </div>
   </body>
 </html>
