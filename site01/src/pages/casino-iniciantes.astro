@@ -13,7 +13,8 @@ const description =
       <p class="kicker">Página pilar</p>
       <h1>Casino online para iniciantes (Portugal)</h1>
       <p class="lead">
-        Se estás a começar, o mais importante é entender <strong>como os jogos funcionam</strong>, o que significa RTP/volatilidade,
+        Se estás a começar, o mais importante é entender <strong>como os jogos funcionam</strong>, o que significa
+        <a href="/rtp-volatilidade"><strong>RTP/volatilidade</strong></a>,
         e como ler <strong>condições de bónus</strong> sem cair em confusão. Este guia é educativo, SEO-first e sem promessas.
       </p>
 
@@ -49,8 +50,12 @@ const description =
       <div class="callout">
         <h4>Base do SITE01</h4>
         <p>
-          O nosso silo cobre 4 tópicos críticos: <a href="/condicoes-bonus">condições de bónus</a>, <a href="/free-spins">free spins</a>,
-          <a href="/gestao-banca">gestão de banca</a> e <a href="/jogo-responsavel">jogo responsável</a>.
+          O nosso silo cobre 5 tópicos críticos:
+          <a href="/condicoes-bonus">condições de bónus</a>,
+          <a href="/free-spins">free spins</a>,
+          <a href="/rtp-volatilidade">RTP e volatilidade</a>,
+          <a href="/gestao-banca">gestão de banca</a>
+          e <a href="/jogo-responsavel">jogo responsável</a>.
         </p>
       </div>
     </section>
@@ -92,6 +97,7 @@ const description =
       </ul>
       <p>
         Para reduzir risco, mantém apostas pequenas em relação à banca e evita sessões longas.
+        Guia dedicado: <a href="/rtp-volatilidade">RTP e volatilidade</a>.
       </p>
     </section>
 
@@ -144,6 +150,7 @@ const description =
       <ul>
         <li><a href="/condicoes-bonus">Condições de bónus: wagering, limites e regras</a></li>
         <li><a href="/free-spins">Free spins: como funcionam e o que validar</a></li>
+        <li><a href="/rtp-volatilidade">RTP e volatilidade</a></li>
         <li><a href="/gestao-banca">Gestão de banca</a></li>
         <li><a href="/jogo-responsavel">Jogo responsável</a></li>
       </ul>
@@ -153,7 +160,20 @@ const description =
         <p>
           No Telegram publicamos atualizações de guias e avisos quando condições e termos mudam.
         </p>
-        <a class="btn primary" href={SITE.telegram ?? SITE.telegramUrl ?? "#"} rel="nofollow noopener" target="_blank">
+        <a
+          class="btn btn-telegram btn-cta"
+          href={SITE.telegram ?? SITE.telegramUrl ?? "#"}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21.6 4.6 2.9 11.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.6 0 1-.3 1.3-.6l2.3-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4Z"
+                fill="white"
+              />
+            </svg>
+          </span>
           Entrar no Telegram
         </a>
       </div>

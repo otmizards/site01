@@ -160,23 +160,38 @@ const description =
     </section>
 
     <section id="proximos-passos">
-      <h2>Próximos passos no SITE01</h2>
-      <ul>
-        <li><a href="/casino-iniciantes">Casino para iniciantes: guia completo</a></li>
-        <li><a href="/condicoes-bonus">Condições de bónus: wagering, limites e regras</a></li>
-        <li><a href="/gestao-banca">Gestão de banca</a></li>
-        <li><a href="/jogo-responsavel">Jogo responsável</a></li>
-      </ul>
+  <h2>Próximos passos no SITE01</h2>
+  <ul>
+    <li><a href="/casino-iniciantes">Casino para iniciantes: guia completo</a></li>
+    <li><a href="/condicoes-bonus">Condições de bónus: wagering, limites e regras</a></li>
+    <li><a href="/rtp-volatilidade">RTP e volatilidade</a></li>
+    <li><a href="/gestao-banca">Gestão de banca</a></li>
+    <li><a href="/jogo-responsavel">Jogo responsável</a></li>
+  </ul>
 
-      <div class="cta-box">
-        <h3>Atualizações (opcional)</h3>
-        <p>
-          No Telegram publicamos atualizações de guias e alertas quando condições mudam (wagering, caps, limites).
-        </p>
-        <a class="btn primary" href={SITE.telegram ?? SITE.telegramUrl ?? "#"} rel="nofollow noopener" target="_blank">
-          Entrar no Telegram
-        </a>
-      </div>
-    </section>
+  <div class="cta-box">
+    <h3>Atualizações (opcional)</h3>
+    <p>
+      No Telegram publicamos atualizações de guias e alertas quando condições mudam (wagering, caps, limites).
+    </p>
+    <a
+      class="btn btn-telegram btn-cta"
+      href={SITE.telegram ?? SITE.telegramUrl ?? "#"}
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+    >
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M21.6 4.6 2.9 11.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.6 0 1-.3 1.3-.6l2.3-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4Z"
+            fill="white"
+          />
+        </svg>
+      </span>
+      Entrar no Telegram
+    </a>
+  </div>
+</section>
+
   </article>
 </GuideLayout>

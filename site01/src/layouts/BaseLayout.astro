@@ -7,8 +7,14 @@ const {
   canonicalPath = "/",
 } = Astro.props;
 
-const baseUrl = SITE?.url ?? "https://360winspt.com";
-const canonical = new URL(canonicalPath, baseUrl).toString();
+// Canonical robusto: prefere Astro.site (domínio real do build), depois config, depois fallback.
+const siteOrigin =
+  Astro.site?.toString() ||
+  SITE?.url ||
+  SITE?.site ||
+  "https://360winspt.com";
+
+const canonical = new URL(canonicalPath, siteOrigin).toString();
 ---
 
 <!doctype html>
@@ -20,6 +26,7 @@ const canonical = new URL(canonicalPath, baseUrl).toString();
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index,follow" />
 
     <!-- Open Graph -->
     <meta property="og:locale" content="pt_PT" />
@@ -27,6 +34,10 @@ const canonical = new URL(canonicalPath, baseUrl).toString();
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${new URL("/og.jpg", siteOrigin).toString()}`} />
+
+    <!-- Twitter (opcional, recomendado) -->
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" />

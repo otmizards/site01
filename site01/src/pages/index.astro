@@ -7,7 +7,8 @@ const description =
   SITE.description ??
   SITE.siteDescription ??
   "Guias completos e explicações claras sobre casino online em Portugal.";
-const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
+
+const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl ?? "#";
 ---
 
 <BaseLayout title={title} description={description} canonicalPath="/">
@@ -24,7 +25,7 @@ const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
           class="btn btn-telegram btn-small"
           href={TELEGRAM_URL}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
         >
           <span class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
@@ -81,7 +82,6 @@ const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
             </div>
           </a>
 
-          <!-- 6ª PÁGINA -->
           <a class="mock-card" href="/rtp-volatilidade">
             <span class="mock-ic">◆</span>
             <div>
@@ -111,7 +111,7 @@ const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
           class="btn btn-telegram btn-cta"
           href={TELEGRAM_URL}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
         >
           <span class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
