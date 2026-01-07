@@ -1,0 +1,244 @@
+---
+import { SITE } from "../config/site.js";
+import GuideLayout from "../layouts/GuideLayout.astro";
+
+const title = "Gestão de banca no casino online: regras, unidades e limites | 360Wins Portugal";
+const description =
+  "Guia completo de gestão de banca no casino online: bankroll, unidades, limites, volatilidade, RTP, stop-loss e disciplina. Conteúdo educativo e seguro para Portugal.";
+---
+
+<GuideLayout title={title} description={description} canonicalPath="/gestao-banca">
+  <article class="guide-layout">
+    <header class="guide-hero">
+      <p class="kicker">Guia essencial</p>
+      <h1>Gestão de banca no casino online</h1>
+      <p class="lead">
+        A gestão de banca (bankroll) é o conjunto de regras que define <strong>quanto podes arriscar</strong>, <strong>quando paras</strong> e
+        <strong>como manténs controlo</strong>. Não é “truque” nem promessa — é um sistema para reduzir decisões impulsivas e proteger o teu saldo.
+      </p>
+
+      <div class="guide-meta">
+        <span>Atualizado para SEO (Portugal)</span>
+        <span>Leitura: 8–12 min</span>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Índice do guia">
+      <h2>Índice</h2>
+      <ol>
+        <li><a href="#o-que-e">O que é banca e por que importa</a></li>
+        <li><a href="#unidades">Unidades: a regra que simplifica tudo</a></li>
+        <li><a href="#limites">Limites (sessão, dia e semana)</a></li>
+        <li><a href="#rtp-volatilidade">RTP, volatilidade e o tamanho da aposta</a></li>
+        <li><a href="#stop-loss-stop-win">Stop-loss e stop-win realistas</a></li>
+        <li><a href="#erros-comuns">Erros comuns que destroem a banca</a></li>
+        <li><a href="#checklist">Checklist rápida antes de jogar</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#proximos-passos">Próximos passos no SITE01</a></li>
+      </ol>
+    </nav>
+
+    <section id="o-que-e">
+      <h2>O que é banca e por que importa</h2>
+      <p>
+        “Banca” é o valor que separas para jogar e que estás disposto a perder sem afetar despesas essenciais. Na prática, a banca serve para:
+      </p>
+      <ul>
+        <li><strong>Evitar decisões emocionais</strong> (perseguir perdas, “recuperar a qualquer custo”).</li>
+        <li><strong>Padronizar apostas</strong> (evita saltos de valor sem lógica).</li>
+        <li><strong>Proteger-te de variação normal</strong> dos jogos (especialmente slots com alta volatilidade).</li>
+      </ul>
+      <p>
+        A banca não existe para “garantir ganhos”. Existe para manter controlo e disciplina num ambiente de variância.
+      </p>
+    </section>
+
+    <section id="unidades">
+      <h2>Unidades: a regra que simplifica tudo</h2>
+      <p>
+        A forma mais simples de gerir banca é apostar em <strong>unidades</strong> (U), um valor fixo pequeno face ao teu saldo.
+        Isso evita que uma decisão impulsiva se transforme num salto de 2€ para 20€ “porque hoje está a dar”.
+      </p>
+
+      <h3>Como definir a tua unidade</h3>
+      <ul>
+        <li><strong>Conservador:</strong> 1U = 0,5% da banca</li>
+        <li><strong>Equilibrado:</strong> 1U = 1% da banca</li>
+        <li><strong>Agressivo:</strong> 1U = 2% da banca (recomendado apenas para quem já aceita muita variação)</li>
+      </ul>
+
+      <div class="callout">
+        <h4>Exemplo rápido</h4>
+        <p>
+          Banca de 100€:
+          <br />0,5% = 0,50€ por aposta (conservador)
+          <br />1% = 1€ por aposta (equilibrado)
+          <br />2% = 2€ por aposta (agressivo)
+        </p>
+      </div>
+
+      <p>
+        Em jogos de alta volatilidade (muitas perdas pequenas antes de uma vitória maior), 0,5%–1% tende a ser mais sustentável.
+      </p>
+    </section>
+
+    <section id="limites">
+      <h2>Limites (sessão, dia e semana)</h2>
+      <p>
+        Uma banca sem limites vira “saldo emocional”. Define limites em camadas:
+      </p>
+
+      <h3>1) Limite por sessão</h3>
+      <ul>
+        <li>Tempo: 20–40 minutos (define antes).</li>
+        <li>Perda máxima: 10U–30U (consoante a banca e o jogo).</li>
+      </ul>
+
+      <h3>2) Limite diário</h3>
+      <ul>
+        <li>Perda máxima diária: 30U–60U.</li>
+        <li>Número máximo de sessões: 1–2.</li>
+      </ul>
+
+      <h3>3) Limite semanal</h3>
+      <ul>
+        <li>Perda máxima semanal: 80U–150U (depende do teu perfil e objetivos).</li>
+        <li>Se atingires, paras e reavalias o plano.</li>
+      </ul>
+
+      <p>
+        O objetivo é cortar o comportamento “só mais uma para recuperar”. Limites funcionam melhor quando são <strong>simples</strong> e <strong>não negociáveis</strong>.
+      </p>
+    </section>
+
+    <section id="rtp-volatilidade">
+      <h2>RTP, volatilidade e o tamanho da aposta</h2>
+      <p>
+        RTP (Return to Player) é uma métrica média de longo prazo. Não garante resultados numa sessão curta.
+        O que influencia o teu risco imediato é a <strong>volatilidade</strong>.
+      </p>
+
+      <h3>Regras práticas por tipo de jogo</h3>
+      <ul>
+        <li><strong>Slots alta volatilidade:</strong> aposta menor (0,5%–1% da banca) e sessões mais curtas.</li>
+        <li><strong>Slots baixa/média volatilidade:</strong> podes tolerar 1%–2% (ainda com limites).</li>
+        <li><strong>Jogos rápidos (crash/instant):</strong> disciplina extra — define stop-loss mais baixo.</li>
+        <li><strong>Mesa ao vivo:</strong> aposta mínima e cuidado com “tilt” (subir aposta após perdas).</li>
+      </ul>
+
+      <div class="callout">
+        <h4>Regra anti-descontrolo</h4>
+        <p>
+          Se sentires vontade de aumentar a aposta “só para recuperar”, é sinal para <strong>encerrar a sessão</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="stop-loss-stop-win">
+      <h2>Stop-loss e stop-win realistas</h2>
+      <p>
+        Stop-loss é obrigatório. Stop-win é opcional, mas útil para reduzir o efeito “devolvi tudo”.
+      </p>
+
+      <h3>Stop-loss (perda máxima)</h3>
+      <ul>
+        <li>Curto e funcional: 20U por sessão.</li>
+        <li>Se for jogo muito volátil: 10U–15U.</li>
+      </ul>
+
+      <h3>Stop-win (ganho alvo)</h3>
+      <ul>
+        <li>Conservador: 10U–20U e paras.</li>
+        <li>Equilibrado: 20U–40U e paras.</li>
+      </ul>
+
+      <p>
+        Stop-win não é “bater meta diária”. É uma ferramenta para evitar que uma sessão positiva vire negativa por excesso de confiança.
+      </p>
+    </section>
+
+    <section id="erros-comuns">
+      <h2>Erros comuns que destroem a banca</h2>
+      <ul>
+        <li><strong>Mudar a unidade</strong> no meio da sessão (“agora vai”).</li>
+        <li><strong>Jogar sem tempo definido</strong> (sessões longas aumentam decisões ruins).</li>
+        <li><strong>Perseguir perdas</strong> com apostas maiores (tilt).</li>
+        <li><strong>Confundir RTP com garantia</strong> (RTP é média, não é seguro).</li>
+        <li><strong>Jogar cansado/ansioso</strong> (piora autocontrolo).</li>
+      </ul>
+
+      <p>
+        Se um destes padrões aparece com frequência, recomenda-se parar e aplicar práticas de <a href="/jogo-responsavel">jogo responsável</a>.
+      </p>
+    </section>
+
+    <section id="checklist">
+      <h2>Checklist rápida antes de jogar</h2>
+      <ul>
+        <li>Defini a minha banca (valor que posso perder sem impacto).</li>
+        <li>Escolhi a minha unidade (0,5%–1% recomendado para maioria).</li>
+        <li>Defini stop-loss por sessão (ex.: 20U).</li>
+        <li>Defini tempo máximo (ex.: 30 minutos).</li>
+        <li>Não vou aumentar apostas para “recuperar”.</li>
+        <li>Se bater limite, paro e fecho.</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+
+      <h3>Qual a melhor percentagem para apostar?</h3>
+      <p>
+        Para a maioria, 0,5%–1% da banca por aposta reduz variação e ajuda a manter disciplina. Percentagens maiores aumentam risco de quebrar a banca rapidamente.
+      </p>
+
+      <h3>Se eu ganhar, devo aumentar a aposta?</h3>
+      <p>
+        A recomendação “segura” é manter a unidade fixa. Subir aposta por euforia costuma reverter ganhos em perdas. Se quiseres ajustar, faz isso <strong>apenas</strong> numa próxima sessão.
+      </p>
+
+      <h3>Gestão de banca garante lucro?</h3>
+      <p>
+        Não. Gestão de banca é controlo de risco e comportamento. O objetivo é reduzir danos e impulsividade, não criar garantia de resultado.
+      </p>
+    </section>
+
+    <section id="proximos-passos">
+  <h2>Próximos passos no SITE01</h2>
+  <p>
+    Para completares o silo de “iniciantes” no casino online, lê também:
+  </p>
+  <ul>
+    <li><a href="/casino-iniciantes">Casino para iniciantes: guia completo</a></li>
+    <li><a href="/condicoes-bonus">Condições de bónus: wagering, limites e regras</a></li>
+    <li><a href="/free-spins">Free spins: como funcionam e o que validar</a></li>
+    <li><a href="/rtp-volatilidade">RTP e volatilidade</a></li>
+    <li><a href="/jogo-responsavel">Jogo responsável: limites e sinais de alerta</a></li>
+  </ul>
+
+  <div class="cta-box">
+    <h3>Queres atualizações e guias novos?</h3>
+    <p>
+      Entrar no Telegram é opcional. Lá publicamos conteúdos educativos, atualizações de guias e avisos de alterações de termos.
+    </p>
+    <a
+      class="btn btn-telegram btn-cta"
+      href={SITE.telegram ?? SITE.telegramUrl ?? "#"}
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+    >
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M21.6 4.6 2.9 11.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.6 0 1-.3 1.3-.6l2.3-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4Z"
+            fill="white"
+          />
+        </svg>
+      </span>
+      Entrar no Telegram
+    </a>
+  </div>
+</section>
+
+  </article>
+</GuideLayout>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../config/site.js";
+
+const title = `Página não encontrada — ${SITE.name ?? SITE.siteName}`;
+const description = "Esta página não existe. Volta à homepage e continua pelos guias.";
+const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl;
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/404" noindex={true}>
+  <main class="container" style="padding: 56px 0;">
+    <h1>Página não encontrada</h1>
+    <p class="lead">O link pode estar errado ou a página já não existe.</p>
+
+    <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="/">Voltar à homepage</a>
+      <a class="btn" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">Telegram</a>
+    </div>
+  </main>
+</BaseLayout>

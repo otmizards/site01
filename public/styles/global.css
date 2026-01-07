@@ -1,0 +1,677 @@
+/* =========================
+   MOCK HERO + Background image
+   ========================= */
+
+body{
+  background:
+    radial-gradient(1000px 520px at 50% 20%, rgba(0,0,0,.55), rgba(0,0,0,.75)),
+    url("/img/bg-casino.jpg") center/cover fixed no-repeat !important;
+}
+
+/* Topbar minimal */
+.topbar{
+  position: sticky;
+  top:0;
+  z-index:50;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(214,180,106,.18);
+}
+.topbar-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 0;
+}
+.topbar-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:#fff;
+}
+.topbar-logo{ height:28px; }
+.topbar-name{ font-weight:800; }
+
+.topbar-nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.topbar-nav a{
+  text-decoration:none;
+  color: rgba(255,255,255,.78);
+}
+.topbar-nav a:hover{ color:#fff; }
+
+@media (max-width: 900px){
+  .topbar-nav{ display:none; }
+}
+
+/* Hero layout */
+.hero-mock{
+  padding: 74px 0 84px;
+}
+.hero-mock-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap: 16px;
+}
+
+.hero-logo{
+  width: min(420px, 82vw);
+  filter: drop-shadow(0 25px 60px rgba(0,0,0,.75));
+}
+
+.hero-title{
+  margin: 0;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  color: #E6C980;
+  text-shadow: 0 18px 60px rgba(0,0,0,.85);
+}
+
+.hero-sub{
+  margin: 0;
+  max-width: 70ch;
+  color: rgba(255,255,255,.78);
+  text-shadow: 0 18px 60px rgba(0,0,0,.85);
+}
+
+.hero-cards{
+  width: min(980px, 100%);
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+@media (max-width: 900px){
+  .hero-cards{ grid-template-columns: 1fr; }
+}
+
+.mock-card{
+  display:flex;
+  align-items:flex-start;
+  gap: 12px;
+  text-decoration:none;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(214,180,106,.22);
+  background: rgba(0,0,0,.38);
+  box-shadow: 0 18px 70px rgba(0,0,0,.55);
+  color:#fff;
+  text-align:left;
+}
+.mock-card strong{
+  display:block;
+  font-weight: 800;
+}
+.mock-card small{
+  display:block;
+  margin-top: 4px;
+  color: rgba(255,255,255,.72);
+}
+
+.mock-card:hover{
+  border-color: rgba(214,180,106,.40);
+  background: rgba(0,0,0,.48);
+  transform: translateY(-2px);
+  transition: .15s ease;
+}
+
+.mock-ic{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display:grid;
+  place-items:center;
+  background: rgba(214,180,106,.12);
+  border: 1px solid rgba(214,180,106,.28);
+  color: #E6C980;
+}
+
+/* CTA (Telegram oficial) */
+.btn-cta{
+  margin-top: 8px;
+  padding: 14px 22px;
+  border-radius: 18px;
+  font-weight: 800;
+}
+
+/* FAQ */
+.faq-mock{
+  padding: 46px 0 78px;
+  background: rgba(0,0,0,.38);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.faq-title{
+  color:#fff;
+  margin-bottom: 14px;
+}
+
+.faq-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+@media (max-width: 900px){
+  .faq-grid{ grid-template-columns: 1fr; }
+}
+
+.faq-item{
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: rgba(0,0,0,.28);
+}
+.faq-item summary{
+  cursor:pointer;
+  font-weight: 750;
+  color:#fff;
+}
+.faq-item p{
+  margin-top: 10px;
+  color: rgba(255,255,255,.75);
+}
+/* =========================
+   POLISH PACK — LP Casino
+   Cola no FIM do global.css
+   ========================= */
+
+:root{
+  --titleFont: "Cinzel", serif;
+  --uiFont: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --gold1:#FFE8B8;
+  --gold2:#D6B46A;
+  --gold3:#9A6B2F;
+
+  --panel: rgba(0,0,0,.46);
+  --panel2: rgba(0,0,0,.28);
+  --line: rgba(214,180,106,.22);
+
+  --shadow2: 0 28px 110px rgba(0,0,0,.70);
+
+  --tg:#229ED9;
+  --tgHover:#1C8CC3;
+}
+
+/* base font */
+body{ font-family: var(--uiFont) !important; }
+
+/* remove link purple + consistência */
+a{ color: inherit; text-decoration: none; }
+
+/* melhora legibilidade do fundo: overlay centrado */
+.hero-mock{
+  position: relative;
+}
+.hero-mock::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  /* overlay suave + vignette (não tapa o fundo) */
+  background:
+    radial-gradient(900px 520px at 50% 45%, rgba(0,0,0,.20), rgba(0,0,0,.55)),
+    radial-gradient(1200px 700px at 50% 20%, rgba(0,0,0,.12), rgba(0,0,0,.55));
+}
+
+.hero-mock > .container{
+  position:relative;
+  z-index:2;
+}
+
+/* logo com melhor presença */
+.hero-logo{
+  width: min(520px, 86vw) !important;
+  margin-top: 6px;
+  filter: drop-shadow(0 30px 90px rgba(0,0,0,.80));
+}
+
+/* headline casino classic */
+.hero-title{
+  font-family: var(--titleFont) !important;
+  letter-spacing: .3px;
+  font-weight: 800 !important;
+  font-size: clamp(30px, 3.1vw, 44px) !important;
+  color: transparent !important;
+  background: linear-gradient(180deg, var(--gold1), var(--gold2), var(--gold3));
+  -webkit-background-clip:text;
+  background-clip:text;
+  text-shadow: 0 18px 70px rgba(0,0,0,.85);
+  margin-top: 6px;
+}
+
+/* subtítulo mais clean */
+.hero-sub{
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 68ch;
+  color: rgba(255,255,255,.80) !important;
+}
+
+/* cards alinhados e com hierarquia */
+.hero-cards{
+  gap: 16px !important;
+  margin-top: 22px !important;
+  width: min(1040px, 100%) !important;
+}
+
+.mock-card{
+  background: linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.30)) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: var(--shadow2) !important;
+  padding: 16px 16px !important;
+  border-radius: 18px !important;
+}
+.mock-card strong{
+  font-weight: 800;
+  font-size: 15px;
+  color: rgba(255,255,255,.95);
+}
+.mock-card small{
+  font-size: 12.5px;
+  color: rgba(255,255,255,.72);
+}
+
+.mock-ic{
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(214,180,106,.34) !important;
+  background: rgba(214,180,106,.10) !important;
+  color: var(--gold2) !important;
+}
+
+/* CTA Telegram: resolve roxo + tamanho correto + alinhamento */
+.btn,
+.btn:visited{
+  color: #fff !important;
+}
+
+.btn-telegram{
+  background: linear-gradient(180deg, #2AA7E3, var(--tg)) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  box-shadow: 0 18px 60px rgba(34,158,217,.22) !important;
+}
+
+.btn-telegram:hover{
+  background: linear-gradient(180deg, #2AA7E3, var(--tgHover)) !important;
+}
+
+/* ícone telegram: SEM gigantes */
+.icon svg{
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* CTA principal */
+.btn-cta{
+  margin-top: 16px !important;
+  padding: 14px 24px !important;
+  border-radius: 18px !important;
+  font-weight: 900 !important;
+  letter-spacing: .2px;
+}
+
+/* Header: menos alto e mais limpo */
+.topbar{
+  background: rgba(0,0,0,.45) !important;
+  border-bottom: 1px solid rgba(214,180,106,.14) !important;
+}
+.topbar-name{
+  font-weight: 850 !important;
+}
+
+/* FAQ mais elegante */
+.faq-mock{
+  background: rgba(0,0,0,.35) !important;
+}
+.faq-item{
+  background: rgba(0,0,0,.28) !important;
+  border-color: rgba(255,255,255,.10) !important;
+}
+
+/* Mobile: reduz logo e espaçamentos */
+@media (max-width: 900px){
+  .hero-mock{ padding: 58px 0 70px !important; }
+  .hero-logo{ width: min(440px, 92vw) !important; }
+  .hero-cards{ grid-template-columns: 1fr !important; }
+}
+
+/* força o botão do topbar a ficar arredondado */
+.topbar .btn-telegram{
+  border-radius: 999px !important;
+  padding: 10px 14px !important;
+  line-height: 1 !important;
+}
+/* FAQ layout correto */
+.faq-mock{
+  padding: 64px 0 90px !important;
+  background: rgba(0,0,0,.22) !important;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.faq-mock .container{
+  width: min(1120px, calc(100% - 40px)) !important;
+}
+
+.faq-title{
+  margin: 0 0 18px !important;
+  font-family: "Cinzel", serif;
+  color: rgba(255,255,255,.95);
+}
+
+.faq-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 900px){
+  .faq-grid{ grid-template-columns: 1fr; }
+}
+
+.faq-item{
+  border: 1px solid rgba(214,180,106,.18);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: rgba(0,0,0,.22);
+}
+
+.faq-item summary{
+  cursor:pointer;
+  font-weight: 800;
+  color: rgba(255,255,255,.95);
+}
+
+.faq-item p{
+  margin: 10px 0 0;
+  color: rgba(255,255,255,.78);
+  line-height: 1.65;
+}
+/* texto acessível/SEO sem aparecer */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+/* =========================
+   Centralização do FAQ
+   ========================= */
+
+.faq-mock{
+  display: flex;
+  justify-content: center;
+}
+
+.faq-mock > .container{
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* =========================
+   GUIDE PAGES — padrão home
+   ========================= */
+
+.guide{
+  padding-bottom: 80px;
+}
+
+.guide-hero{
+  padding: 46px 0 24px;
+}
+
+.guide-breadcrumb{
+  font-size: 13px;
+  color: rgba(255,255,255,.70);
+  display:flex;
+  gap: 8px;
+  align-items:center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.guide-breadcrumb a{
+  color: rgba(255,255,255,.80);
+}
+.guide-breadcrumb a:hover{
+  color: #fff;
+}
+.guide-breadcrumb .muted{
+  color: rgba(255,255,255,.60);
+}
+
+.guide-title{
+  font-family: "Cinzel", serif;
+  font-weight: 800;
+  letter-spacing: .3px;
+  margin: 0 0 10px;
+  color: transparent;
+  background: linear-gradient(180deg, #FFE8B8, #D6B46A, #9A6B2F);
+  -webkit-background-clip:text;
+  background-clip:text;
+  text-shadow: 0 18px 70px rgba(0,0,0,.85);
+}
+
+.guide-desc{
+  max-width: 80ch;
+  color: rgba(255,255,255,.78);
+  margin: 0;
+}
+
+.guide-body{
+  padding: 16px 0 0;
+}
+
+.guide-grid{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items:start;
+}
+
+@media (max-width: 980px){
+  .guide-grid{ grid-template-columns: 1fr; }
+}
+
+.guide-panel{
+  border: 1px solid rgba(214,180,106,.18);
+  border-radius: 18px;
+  background: rgba(0,0,0,.35);
+  box-shadow: 0 28px 110px rgba(0,0,0,.60);
+  padding: 22px;
+}
+
+/* tipografia do conteúdo */
+.guide-panel h2{
+  margin: 18px 0 10px;
+  color: rgba(255,255,255,.95);
+}
+.guide-panel p, .guide-panel li{
+  color: rgba(255,255,255,.78);
+  line-height: 1.75;
+}
+.guide-panel ul{
+  padding-left: 18px;
+}
+
+.guide-aside{
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+
+.aside-box{
+  border: 1px solid rgba(214,180,106,.16);
+  border-radius: 18px;
+  background: rgba(0,0,0,.26);
+  padding: 16px 16px;
+}
+.aside-box h3{
+  margin: 0 0 10px;
+  color: rgba(255,255,255,.92);
+}
+.aside-box ul{
+  margin: 0;
+  padding-left: 18px;
+}
+.aside-box li{
+  margin: 6px 0;
+}
+/* =========================
+   GUIDE FIX PACK
+   ========================= */
+
+/* garante container centrado e com padding lateral */
+.container{
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* overlay suave na área das páginas internas (não mata o fundo) */
+.guide{
+  position: relative;
+}
+.guide::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 520px at 50% 30%, rgba(0,0,0,.15), rgba(0,0,0,.55));
+}
+.guide > *{
+  position: relative;
+  z-index: 2;
+}
+
+/* grid realmente centrado */
+.guide-grid{
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* painel do conteúdo com fundo mais sólido para leitura */
+.guide-panel{
+  background: rgba(0,0,0,.58) !important;
+  border: 1px solid rgba(214,180,106,.20) !important;
+  border-radius: 18px;
+  padding: 26px !important;
+}
+
+/* tipografia do conteúdo */
+.guide-panel h2{
+  margin-top: 18px;
+  color: rgba(255,255,255,.95);
+}
+.guide-panel p, .guide-panel li{
+  color: rgba(255,255,255,.82);
+  line-height: 1.75;
+}
+
+/* ASIDE legível (checklist) */
+.aside-box{
+  background: rgba(0,0,0,.62) !important;
+  border: 1px solid rgba(214,180,106,.18) !important;
+  border-radius: 18px;
+}
+
+.aside-box h3{
+  color: rgba(255,255,255,.95);
+  margin-bottom: 10px;
+}
+
+.aside-box li{
+  color: rgba(255,255,255,.82);
+  line-height: 1.6;
+}
+
+/* BOTÃO lateral telegram: corrigir largura, radius e alinhamento */
+.btn-full{
+  width: 100% !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 14px 18px !important;
+  border-radius: 18px !important;
+  font-weight: 800 !important;
+}
+
+.btn-telegram{
+  background: linear-gradient(180deg, #2AA7E3, #229ED9) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  color: #fff !important reminding;
+}
+
+.btn-telegram:hover{
+  background: linear-gradient(180deg, #2AA7E3, #1C8CC3) !important;
+}
+
+.icon svg{
+  width: 18px !important;
+  height: 18px !important;
+}
+/* === FIX TITULO PAGINAS DE GUIA === */
+.content-page h1,
+.guide-layout h1 {
+  color: #f5d58c; /* dourado legível */
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+}
+/* Guide pages: texto todo branco (exceto H1 dourado) */
+.guide-layout {
+  color: #ffffff;
+}
+
+.guide-layout p,
+.guide-layout li,
+.guide-layout span,
+.guide-layout small,
+.guide-layout strong,
+.guide-layout em,
+.guide-layout blockquote,
+.guide-layout .lead,
+.guide-layout .kicker,
+.guide-layout .note,
+.guide-layout .guide-meta,
+.guide-layout .toc,
+.guide-layout .toc * {
+  color: #ffffff;
+}
+
+/* Mantém headings conforme regra do projeto */
+.guide-layout h1 {
+  /* mantém o teu dourado atual */
+  color: var(--gold, #d4af37);
+}
+
+.guide-layout h2,
+.guide-layout h3,
+.guide-layout h4 {
+  color: #ffffff;
+}
+
+/* Links legíveis no tema escuro */
+.guide-layout a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.guide-layout a:hover {
+  opacity: 0.9;
+}
+

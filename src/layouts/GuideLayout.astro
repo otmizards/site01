@@ -1,0 +1,93 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { SITE } from "../config/site.js";
+
+const {
+  title = "Guia",
+  description = SITE.description,
+  canonicalPath = "/",
+} = Astro.props;
+
+const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl ?? "#";
+
+
+const pageTitle = `${title} — ${SITE.name ?? "360Wins Portugal"}`;
+---
+
+<BaseLayout title={pageTitle} description={description} canonicalPath={canonicalPath}>
+  <header class="topbar">
+ 
+
+    <div class="container topbar-inner">
+      <a class="topbar-brand" href="/" aria-label={SITE.name ?? "360Wins Portugal"}>
+        <img class="topbar-logo" src="/logo.png" alt={SITE.name ?? "360Wins Portugal"} />
+        <span class="sr-only">{SITE.name ?? "360Wins Portugal"}</span>
+      </a>
+
+      <nav class="topbar-nav">
+        <a href="/#guias">Guias</a>
+        <a href="/#faq">FAQ</a>
+        <a
+  class="btn btn-telegram btn-small"
+  href={TELEGRAM_URL}
+  target="_blank"
+  rel="nofollow noopener noreferrer"
+>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M21.6 4.6 2.9 11.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.6 0 1-.3 1.3-.6l2.3-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4Z" fill="white"/>
+            </svg>
+          </span>
+          Telegram
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guide">
+    <section class="guide-hero">
+      <div class="container">
+        <div class="guide-breadcrumb">
+          <a href="/">Home</a>
+          <span>›</span>
+          <a href="/#guias">Guias</a>
+          <span>›</span>
+          <span class="muted">{title}</span>
+        </div>
+
+        <h1 class="guide-title">{title}</h1>
+        <p class="guide-desc">{description}</p>
+      </div>
+    </section>
+
+    <section class="guide-body">
+      <div class="container guide-grid">
+        <article class="guide-panel">
+          <slot />
+        </article>
+
+        <aside class="guide-aside">
+          <div class="aside-box">
+            <h3>Checklist rápido</h3>
+            <ul>
+              <li>Verifica exigido, prazos e limites</li>
+              <li>Confirma jogos elegíveis</li>
+              <li>Define banca e limite diário</li>
+              <li>Evita decisões por impulso</li>
+            </ul>
+          </div>
+
+          <a class="btn btn-telegram btn-full" href={TELEGRAM_URL} target="_blank" rel="nofollow noopener noreferrer"
+>
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M21.6 4.6 2.9 11.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.6 0 1-.3 1.3-.6l2.3-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4Z" fill="white"/>
+              </svg>
+            </span>
+            Entrar no Telegram
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

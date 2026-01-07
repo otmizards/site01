@@ -1,0 +1,67 @@
+---
+import { SITE } from "../config/site.js";
+
+const {
+  title = SITE?.name ?? SITE?.siteName ?? "360Wins Portugal",
+  description = SITE?.description ?? SITE?.siteDescription ?? "Guias claros e diretos.",
+  canonicalPath = "/",
+} = Astro.props;
+
+// Fonte única da verdade: domínio final do site (nunca .pages.dev)
+const siteOrigin =
+  SITE?.siteUrl || SITE?.url || SITE?.site || "https://360winspt.com";
+
+// Normaliza o path e força canonical consistente
+const path = (canonicalPath?.startsWith("/") ? canonicalPath : `/${canonicalPath || ""}`).replace(/\/{2,}/g, "/");
+const canonical = `${siteOrigin}${path.endsWith("/") ? path : `${path}/`}`;
+
+// OG image padrão (garante consistência em toda a rede)
+const ogImage = `${siteOrigin}/og.jpg`;
+---
+
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+
+    <div class="app">
+      <slot />
+    </div>
+  </body>
+</html>

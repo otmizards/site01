@@ -1,0 +1,186 @@
+---
+import { SITE } from "../config/site.js";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = SITE.name ?? SITE.siteName ?? "360Wins Portugal";
+const description =
+  SITE.description ??
+  SITE.siteDescription ??
+  "Guias completos e explicações claras sobre casino online em Portugal.";
+
+const TELEGRAM_URL = SITE.telegram ?? SITE.telegramUrl ?? "#";
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="topbar-brand" href="/" aria-label="Homepage">
+        <img class="topbar-logo" src="/logo.png" alt={title} />
+      </a>
+
+      <nav class="topbar-nav">
+        <a href="#guias">Guias</a>
+        <a href="#faq">FAQ</a>
+        <a
+          class="btn btn-telegram btn-small"
+          href={TELEGRAM_URL}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21.6 4.6 2.9 11.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.6 0 1-.3 1.3-.6l2.3-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+          Telegram
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-mock">
+      <div class="container hero-mock-inner">
+        <img class="hero-logo" src="/logo.png" alt="360Wins Portugal" />
+
+        <h1 class="hero-title">
+          Guias de Casino Online em Portugal
+        </h1>
+
+        <p class="hero-sub">
+          Informação clara, detalhada e em português de Portugal sobre como funcionam
+          os casinos online. Explicamos regras, condições, bónus, rodadas grátis,
+          gestão de banca e princípios de jogo responsável — sem promessas e sem exageros.
+        </p>
+
+        <div class="hero-cards" id="guias">
+          <a class="mock-card" href="/casino-iniciantes">
+            <span class="mock-ic">★</span>
+            <div>
+              <strong>Casino Online para Iniciantes</strong>
+              <small>Primeiros passos, conceitos básicos e erros comuns</small>
+            </div>
+          </a>
+
+          <a class="mock-card" href="/condicoes-bonus">
+            <span class="mock-ic">✓</span>
+            <div>
+              <strong>Condições de Bónus</strong>
+              <small>Exigido, prazos, limites e regras explicadas</small>
+            </div>
+          </a>
+
+          <a class="mock-card" href="/free-spins">
+            <span class="mock-ic">♢</span>
+            <div>
+              <strong>Free Spins e Rodadas Grátis</strong>
+              <small>Como funcionam e quais as suas limitações</small>
+            </div>
+          </a>
+
+          <a class="mock-card" href="/rtp-volatilidade">
+            <span class="mock-ic">◆</span>
+            <div>
+              <strong>RTP e Volatilidade</strong>
+              <small>O que significam e como afetam risco e decisões</small>
+            </div>
+          </a>
+
+          <a class="mock-card" href="/gestao-banca">
+            <span class="mock-ic">⚑</span>
+            <div>
+              <strong>Gestão de Banca</strong>
+              <small>Definir limites e manter decisões controladas</small>
+            </div>
+          </a>
+
+          <a class="mock-card" href="/jogo-responsavel">
+            <span class="mock-ic">☑</span>
+            <div>
+              <strong>Jogo Responsável</strong>
+              <small>Controlo, sinais de alerta e boas práticas</small>
+            </div>
+          </a>
+        </div>
+
+        <a
+          class="btn btn-telegram btn-cta"
+          href={TELEGRAM_URL}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21.6 4.6 2.9 11.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.6 0 1-.3 1.3-.6l2.3-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+          Entrar no Telegram
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-mock">
+      <div class="container">
+        <h2 class="faq-title">Perguntas Frequentes</h2>
+
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>O que é o 360Wins Portugal?</summary>
+            <p>
+              O 360Wins Portugal é um site informativo dedicado a explicar, de forma clara,
+              como funcionam os casinos online em Portugal, incluindo regras, bónus e boas práticas.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Este site recomenda casinos ou garante resultados?</summary>
+            <p>
+              Não. O conteúdo é exclusivamente educativo e informativo.
+              Não operamos jogos, não processamos pagamentos e não garantimos resultados.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Este conteúdo é adequado para iniciantes?</summary>
+            <p>
+              Sim. Os guias foram criados para serem acessíveis a quem está a começar,
+              sem deixar de ser úteis para utilizadores mais experientes.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>O que devo verificar antes de aceitar um bónus?</summary>
+            <p>
+              É importante verificar o exigido (wager), prazos, limites de aposta
+              e jogos elegíveis antes de ativar qualquer oferta.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Porque existe um canal no Telegram?</summary>
+            <p>
+              Para centralizar atualizações, novos guias e conteúdos adicionais
+              num único local, de forma opcional.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Este conteúdo é focado em Portugal?</summary>
+            <p>
+              Sim. O conteúdo é escrito em português de Portugal e focado
+              no contexto dos utilizadores em Portugal.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
